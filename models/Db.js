@@ -11,7 +11,7 @@ const database = {
     connect: async function() {
         try {
             await mongoose.connect(url, options);
-            console.log('Connected to MongoDB database: hypnos');
+            console.log('Connected to MongoDB database');
         } catch (error) {
             console.log('Database connection error:', error);
             console.log('Make sure MongoDB is running on your system');
