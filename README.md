@@ -129,6 +129,28 @@ hypnos/
 
 ---
 
+##Libraries used
+
+bcrypt
+  - Used for securely hashing passwords before storing them in the database. Helps protect user credentials by applying one-way encryption
+
+express
+  - A minimalist and flexible Node.js web application framework that provides routing, middleware support, and server utilities. This app uses Express to handle HTTP requests and structure the backend.
+
+express-session
+  - Middleware for managing user sessions. It stores session data on the server and issues session cookies to users, enabling features such as login persistence and access control across routes.
+
+hbs (Handlebars)
+  - A templating engine used for rendering dynamic HTML pages. Handlebars allows injecting backend data into templates while keeping views clean and readable.
+
+Mongoose
+  - An ODM (Object Data Modeling) library for MongoDB that provides schema definitions, model validation, and convenient methods for interacting with the database. Used to define collections such as users and other data.
+
+routes
+  - The project follows a modular routing structure where all endpoint handlers are separated into route files. This improves organization, readability, and maintainability by grouping related route logic together.
+
+---
+
 ## Notes
 
 - Sample datas are loaded via seed.js
