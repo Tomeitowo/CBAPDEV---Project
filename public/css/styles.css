@@ -1,0 +1,1343 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background: linear-gradient(135deg, #bee3f8 0%, #e9d8fd 100%);
+    min-height: 100vh;
+}
+
+/* Login Page Styles */
+.login-page {
+    display: table;
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.login-page-inner {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    color: #4a5568;
+    font-size: 16px;
+}
+
+.login-form {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+}
+
+.btn-secondary {
+    background: #edf2f7;
+    color: #2d3748;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+.btn-success {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #38a169;
+}
+
+.btn-warning {
+    background: #ed8936;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #dd6b20;
+}
+
+.btn-danger {
+    background: #f56565;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #e53e3e;
+}
+
+.btn-icon {
+    padding: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    color: #4a5568;
+}
+
+.btn-icon:hover {
+    background: #edf2f7;
+    color: #667eea;
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    border-top: 1px solid #e2e8f0;
+    height: 1px;
+    position: relative;
+}
+
+.divider span {
+    padding: 0 16px;
+    color: #718096;
+    font-size: 14px;
+    background: #ffffff;
+    position: relative;
+    top: -12px;
+}
+
+/* Header Styles */
+.main-header {
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 32px;
+    overflow: hidden;
+}
+
+.logo-header {
+    float: left;
+}
+
+.logo-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.header-right {
+    float: right;
+}
+
+.profile-btn,
+.back-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #2d3748;
+    font-weight: 600;
+    margin-left: 16px;
+}
+
+.profile-btn:hover,
+.back-btn:hover {
+    background: #edf2f7;
+    color: #667eea;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 32px;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.welcome-section h2 {
+    font-size: 36px;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #4a5568;
+    font-size: 18px;
+}
+
+.dashboard-grid {
+    text-align: center;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    text-decoration: none;
+    color: #2d3748;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 10px 24px 10px;
+    display: inline-block;
+    width: 22%;
+    vertical-align: top;
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    margin: 0 auto 24px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 40px;
+}
+
+.card-sessions .card-icon {
+    background: #667eea;
+    color: white;
+}
+
+.card-goals .card-icon {
+    background: #48bb78;
+    color: white;
+}
+
+.card-mood .card-icon {
+    background: #b794f6;
+    color: white;
+}
+
+.card-insights .card-icon {
+    background: #667eea;
+    color: white;
+}
+
+.dashboard-card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.dashboard-card p {
+    color: #4a5568;
+    font-size: 16px;
+}
+
+/* Content Page Styles */
+.content-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.page-header {
+    margin-bottom: 32px;
+}
+
+.page-header h2 {
+    font-size: 32px;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: #4a5568;
+    font-size: 18px;
+}
+
+.content-container {
+    display: block;
+}
+
+.action-bar {
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.search-box {
+    background: #ffffff;
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    float: left;
+    width: 60%;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 16px;
+}
+
+.action-bar .btn {
+    float: right;
+    margin-left: 12px;
+}
+
+/* Timer Card */
+.timer-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.active-session {
+    border: 3px solid #667eea;
+}
+
+.timer-card h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.timer-display {
+    display: block;
+}
+
+.timer-time {
+    font-size: 64px;
+    font-weight: 700;
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.timer-category {
+    margin-bottom: 20px;
+}
+
+.timer-category select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.timer-controls {
+    text-align: center;
+}
+
+.timer-controls button {
+    margin: 0 6px;
+    min-width: 120px;
+}
+
+/* Sessions List */
+.sessions-list {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.sessions-list h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.session-item {
+    padding: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.session-item:hover {
+    border-color: #667eea;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.session-info {
+    float: left;
+    width: 70%;
+}
+
+.session-category {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 16px;
+}
+
+.session-category.social-media {
+    background: #e9d8fd;
+    color: #b794f6;
+}
+
+.session-category.work {
+    background: #c6f6d5;
+    color: #48bb78;
+}
+
+.session-category.gaming {
+    background: #bee3f8;
+    color: #667eea;
+}
+
+.session-category.movies {
+    background: #feebc8;
+    color: #ed8936;
+}
+
+.session-category.study {
+    background: #e6fffa;
+    color: #319795;
+}
+
+.session-category.other {
+    background: #edf2f7;
+    color: #4a5568;
+}
+
+.session-details {
+    display: inline;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.session-duration {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.session-actions {
+    float: right;
+}
+
+.session-actions button {
+    margin-left: 8px;
+}
+
+/* Goals Styles */
+.goals-section {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.goals-section h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.goal-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.goal-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.goal-card.completed {
+    opacity: 0.7;
+    background: #f7fafc;
+}
+
+.goal-header {
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.goal-title {
+    float: left;
+}
+
+.goal-title h4 {
+    font-size: 20px;
+    color: #2d3748;
+}
+
+.goal-description {
+    color: #4a5568;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.goal-progress {
+    margin-bottom: 16px;
+}
+
+.progress-info {
+    overflow: hidden;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.progress-percentage {
+    font-weight: 600;
+    color: #2d3748;
+    float: right;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #edf2f7;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.progress-fill.exceeded {
+    background: #f56565;
+}
+
+.goal-footer {
+    overflow: hidden;
+}
+
+.goal-streak {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    float: left;
+}
+
+.goal-status {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    float: right;
+}
+
+.status-active {
+    background: #c6f6d5;
+    color: #48bb78;
+}
+
+.status-exceeded {
+    background: #fed7d7;
+    color: #f56565;
+}
+
+.status-completed {
+    background: #bee3f8;
+    color: #667eea;
+}
+
+.goal-actions {
+    float: right;
+}
+
+.goal-actions button {
+    margin-left: 8px;
+}
+
+/* Mood Tracker Styles */
+.mood-input-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.mood-input-card h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #2d3748;
+}
+
+.mood-selector {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.mood-btn {
+    display: inline-block;
+    padding: 16px;
+    background: #f7fafc;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    cursor: pointer;
+    margin: 0 6px;
+    min-width: 100px;
+    vertical-align: top;
+}
+
+.mood-btn:hover {
+    background: #e9d8fd;
+}
+
+.mood-btn.selected {
+    border-color: #b794f6;
+    background: #e9d8fd;
+}
+
+.mood-emoji {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.mood-btn span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    display: block;
+}
+
+.mood-note-section {
+    display: block;
+}
+
+.mood-note-section textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: vertical;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    margin-bottom: 16px;
+}
+
+.insights-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.insights-card h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.insight-item {
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.insight-icon {
+    font-size: 32px;
+    float: left;
+    margin-right: 16px;
+}
+
+.insight-content h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+.insight-content p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.mood-history {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.mood-history h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.mood-entry {
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.mood-entry:hover {
+    border-color: #b794f6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mood-entry-header {
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.mood-info {
+    float: left;
+}
+
+.mood-emoji-large {
+    font-size: 48px;
+    float: left;
+    margin-right: 16px;
+}
+
+.mood-details {
+    float: left;
+}
+
+.mood-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    display: block;
+}
+
+.mood-date {
+    font-size: 14px;
+    color: #718096;
+    display: block;
+}
+
+.mood-actions {
+    float: right;
+}
+
+.mood-actions button {
+    margin-left: 8px;
+}
+
+.mood-note {
+    color: #4a5568;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    clear: both;
+}
+
+.mood-stats {
+    overflow: hidden;
+}
+
+.stat-item {
+    font-size: 14px;
+    color: #4a5568;
+    padding: 6px 12px;
+    background: #f7fafc;
+    border-radius: 8px;
+    float: left;
+    margin-right: 16px;
+}
+
+/* Insights Page Styles */
+.filter-bar {
+    text-align: right;
+    margin-bottom: 24px;
+}
+
+.filter-select {
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.stats-grid {
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-right: 20px;
+    float: left;
+    width: 48%;
+    overflow: hidden;
+}
+
+.stat-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    float: left;
+    text-align: center;
+    line-height: 64px;
+    font-size: 32px;
+    margin-right: 16px;
+}
+
+.stat-content h4 {
+    font-size: 14px;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 4px;
+}
+
+.stat-change {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.stat-change.positive {
+    color: #48bb78;
+}
+
+.stat-change.negative {
+    color: #f56565;
+}
+
+.chart-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.chart-card h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.charts-row {
+    overflow: hidden;
+}
+
+.charts-row .chart-card {
+    float: left;
+    width: 48%;
+    margin-right: 20px;
+}
+
+.goal-progress-list {
+    display: block;
+}
+
+.progress-item {
+    margin-bottom: 24px;
+}
+
+.progress-header {
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.progress-value {
+    color: #4a5568;
+    float: right;
+}
+
+.insights-summary {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.insights-summary h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.summary-grid {
+    overflow: hidden;
+}
+
+.summary-item {
+    float: left;
+    width: 30%;
+    margin-right: 20px;
+    margin-bottom: 24px;
+}
+
+.summary-label {
+    font-size: 14px;
+    color: #4a5568;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.summary-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.recommendations-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.recommendations-card h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.recommendation-list {
+    display: block;
+}
+
+.recommendation-item {
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.recommendation-icon {
+    font-size: 32px;
+    float: left;
+    margin-right: 16px;
+}
+
+.recommendation-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+.recommendation-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Profile Page Styles */
+.profile-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.profile-container {
+    display: block;
+}
+
+.profile-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 24px;
+    background: #667eea;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 120px;
+    color: white;
+    font-size: 48px;
+}
+
+.profile-card h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+.profile-email {
+    color: #4a5568;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.member-since {
+    color: #718096;
+    font-size: 14px;
+}
+
+.settings-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.settings-card h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.settings-form {
+    display: block;
+}
+
+.settings-form .form-group {
+    margin-bottom: 20px;
+}
+
+.settings-form .btn {
+    margin-top: 8px;
+}
+
+.danger-zone {
+    border: 2px solid #f56565;
+}
+
+.warning-text {
+    color: #4a5568;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #2d3748;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.modal-actions button {
+    flex: 1;
+}
+/* Progress fill widths */
+.progress-fill.width-75 {
+    width: 75%;
+}
+
+.progress-fill.width-100 {
+    width: 100%;
+}
+
+/* Stat icon backgrounds */
+.stat-icon.icon-purple {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stat-icon.icon-green {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.stat-icon.icon-blue {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.stat-icon.icon-orange {
+    background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+}
+
+/* Progress fill colors for insights */
+.progress-fill.color-purple {
+    background: #667eea;
+}
+
+.progress-fill.color-green {
+    background: #48bb78;
+}
+
+.progress-fill.color-red {
+    background: #f56565;
+}
+
+/* SVG sizing */
+svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile-btn svg,
+.back-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.card-icon svg {
+    width: 48px;
+    height: 48px;
+    margin-top: -10px;
+}
+
+.stat-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 16px;
+    }
+    
+    .logo-header,
+    .header-right {
+        float: none;
+        text-align: center;
+    }
+    
+    .profile-btn,
+    .back-btn {
+        margin: 8px;
+    }
+    
+    .dashboard {
+        padding: 24px 16px;
+    }
+    
+    .content-page {
+        padding: 24px 16px;
+    }
+    
+    .welcome-section h2 {
+        font-size: 28px;
+    }
+    
+    .dashboard-card {
+        float: none;
+        width: 100%;
+        margin: 0 0 24px 0;
+        display: block;
+    }
+
+    .search-box {
+        float: none;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    
+    .action-bar .btn {
+        float: none;
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+    }
+    
+    
+    .timer-time {
+        font-size: 48px;
+    }
+    
+    .session-info,
+    .session-actions {
+        float: none;
+        width: 100%;
+        margin-top: 12px;
+    }
+    
+    .charts-row .chart-card {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .stat-card {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .summary-item {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .login-card {
+        padding: 32px 24px;
+    }
+    
+    .mood-btn {
+        min-width: 80px;
+        margin: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 36px;
+    }
+    
+    .welcome-section h2 {
+        font-size: 24px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+    }
+    
+    .dashboard-card {
+        padding: 24px;
+    }
+    
+    .card-icon {
+        width: 64px;
+        height: 64px;
+        line-height: 64px;
+        font-size: 32px;
+    }
+    
+    .dashboard-card h3 {
+        font-size: 20px;
+    }
+}

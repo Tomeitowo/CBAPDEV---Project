@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals - Hypnos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-header">
+                <h1>Hypnos</h1>
+            </div>
+            
+            <div class="header-right">
+                <a href="/home" class="back-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/profile" class="profile-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Profile</span>
+                </a>
+                <a href="/logout" class="profile-btn" id="logoutBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="content-page">
+        <div class="page-header">
+            <h2>Screen Time Goals</h2>
+            <p>Set and track your digital wellness objectives</p>
+        </div>
+        
+        <div class="content-container">
+            <div class="action-bar">
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="goalSearch" placeholder="Search goals by category...">
+                </div>
+                <button class="btn btn-primary" id="newGoalBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    New Goal
+                </button>
+            </div>
+            
+            <!-- Active Goals Section -->
+            {{#if activeGoals.length}}
+            <div class="goals-section">
+                <h3>Active Goals</h3>
+                {{#each activeGoals}}
+                <div class="goal-card" data-goal-id="{{this.id}}">
+                    <div class="goal-header">
+                        <div class="goal-title">
+                            <h4 class="goal-name">{{this.name}}</h4>
+                            <span class="goal-category {{this.categoryClass}}">{{this.category}}</span>
+                        </div>
+                        <div class="goal-actions">
+                            <button class="btn-icon complete-goal" data-goal-id="{{this.id}}" title="Mark as Completed">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 11 12 14 22 4"></polyline>
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon edit-goal" data-goal-id="{{this.id}}" title="Edit">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon delete-goal" data-goal-id="{{this.id}}" title="Delete">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    {{#if this.description}}
+                    <div class="goal-description">
+                        {{this.description}}
+                    </div>
+                    {{/if}}
+                    <div class="goal-progress">
+                        <div class="progress-info">
+                            <span>Today: {{this.currentTime}} / {{this.targetTime}}</span>
+                            <span class="progress-percentage">{{this.progressPercentage}}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill {{#if this.exceeded}}exceeded{{/if}}" style="width: {{this.progressWidth}}%"></div>
+                        </div>
+                    </div>
+                    <div class="goal-footer">
+                        <span class="goal-streak">🔥 {{this.streak}} day streak</span>
+                        <span class="goal-status status-{{this.statusClass}}">{{this.status}}</span>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+            
+            <!-- Completed Goals Section -->
+            {{#if completedGoals.length}}
+            <div class="goals-section">
+                <h3>Completed Goals</h3>
+                {{#each completedGoals}}
+                <!-- In the completed goals section -->
+				<div class="goal-card completed">
+					<div class="goal-header">
+						<div class="goal-title">
+							<h4>{{this.name}}</h4>
+							<span class="goal-category {{this.categoryClass}}">{{this.category}}</span>
+						</div>
+						<div class="goal-actions">
+							<button class="btn-icon reactivate-goal" data-goal-id="{{this.id}}" title="Reactivate Goal">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M3 7v6h6"></path>
+									<path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"></path>
+								</svg>
+							</button>
+							<button class="btn-icon delete-goal" data-goal-id="{{this.id}}" title="Delete">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<polyline points="3 6 5 6 21 6"></polyline>
+									<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="goal-description">
+						{{this.description}}
+					</div>
+					<div class="goal-footer">
+						<span class="goal-streak">✓ Completed on {{this.completedDate}}</span>
+						<span class="goal-status status-completed">Completed</span>
+					</div>
+				</div>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+    </main>
+    
+    <!-- Goal Modal -->
+    <div id="goalModal" class="modal">
+        <div class="modal-content">
+            <h3 id="goalModalTitle">Create New Goal</h3>
+            <form id="goalForm">
+                <input type="hidden" id="editGoalId">
+                <div class="form-group">
+                    <label for="goalName">Goal Name</label>
+                    <input type="text" id="goalName" placeholder="e.g., Reduce Instagram time" required>
+                </div>
+                <div class="form-group">
+                    <label for="goalCategory">Category</label>
+                    <select id="goalCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Social Media">Social Media</option>
+                        <option value="Gaming">Gaming</option>
+                        <option value="Movies">Movies & Entertainment</option>
+                        <option value="Work">Work-related</option>
+                        <option value="Study">Study & Learning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="goalDescription">Description (Optional)</label>
+                    <textarea id="goalDescription" rows="3" placeholder="Describe your goal (optional)..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="goalLimit">Daily Time Limit (hours)</label>
+                    <input type="number" id="goalLimit" step="0.5" min="0" placeholder="e.g., 2" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary cancel-goal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Goal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

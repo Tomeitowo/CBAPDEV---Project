@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Hypnos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-page-inner">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="logo-section">
+                        <div class="logo">Hypnos</div>
+                        <div class="tagline">Track your screen time, improve your wellbeing</div>
+                    </div>
+
+                    <!-- Success Message -->
+                    {{#if success}}
+                    <div class="success-message" style="background: #c6f6d5; color: #2d3748; padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+                        {{success}}
+                    </div>
+                    {{/if}}
+
+                    <!-- Error Message -->
+                    {{#if error}}
+                    <div class="error-message" style="background: #fed7d7; color: #c53030; padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+                        {{error}}
+                    </div>
+                    {{/if}}
+
+                    <form class="login-form" action="/login" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                    </form>
+                    
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+                    
+                    <a href="/register" class="btn btn-secondary" style="width: 100%; text-align: center; display: block;">
+                        Create New Account
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

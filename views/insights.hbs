@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights - Hypnos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-header">
+                <h1>Hypnos</h1>
+            </div>
+            
+            <div class="header-right">
+                <a href="/home" class="back-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/profile" class="profile-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Profile</span>
+                </a>
+                <a href="/logout" class="profile-btn" id="logoutBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="content-page">
+        <div class="page-header">
+            <h2>Insights & Analytics</h2>
+            <p>Visualize your screen time patterns and progress</p>
+        </div>
+        
+        <div class="content-container">
+            <div class="filter-bar">
+                <select id="timeRangeFilter" class="filter-select">
+                    <option value="7days">Last 7 Days</option>
+                    <option value="30days">Last 30 Days</option>
+                    <option value="90days">Last 90 Days</option>
+                </select>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #667eea;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Total Screen Time</h4>
+                        <div class="stat-value">{{stats.totalScreenTime}}</div>
+                        <div class="stat-change {{stats.totalChangeClass}}">{{stats.totalChange}}</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #48bb78;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Goals Achieved</h4>
+                        <div class="stat-value">{{stats.goalsAchieved}}</div>
+                        <div class="stat-change {{stats.goalsChangeClass}}">{{stats.goalsSuccessRate}}</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #4299e1;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Average Mood</h4>
+                        <div class="stat-value">{{stats.averageMood}}</div>
+                        <div class="stat-change {{stats.moodChangeClass}}">{{stats.moodTrend}}</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #ed8936;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M18 20V10"></path>
+                            <path d="M12 20V4"></path>
+                            <path d="M6 20v-6"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Daily Average</h4>
+                        <div class="stat-value">{{stats.dailyAverage}}</div>
+                        <div class="stat-change {{stats.avgChangeClass}}">{{stats.avgChange}}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3>Screen Time Trend (Last 7 Days)</h3>
+                <canvas id="screenTimeTrendChart"></canvas>
+            </div>
+            
+            <div class="charts-row">
+                <div class="chart-card">
+                    <h3>Time by Category</h3>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+                
+                <div class="chart-card">
+                    <h3>Goal Progress</h3>
+                    <div class="goal-progress-list">
+                        {{#each goalProgress}}
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>{{this.name}}</span>
+                                <span class="progress-value">{{this.percentage}}%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill {{#if this.exceeded}}exceeded{{/if}}" style="width: {{this.progressWidth}}%; background: {{this.color}};"></div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3>Mood vs Screen Time Correlation</h3>
+                <canvas id="moodCorrelationChart"></canvas>
+            </div>
+            
+            <div class="insights-summary">
+                <h3>Weekly Summary</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-label">Most Used Category</div>
+                        <div class="summary-value">{{summary.mostUsedCategory}}</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Best Day</div>
+                        <div class="summary-value">{{summary.bestDay}}</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Longest Session</div>
+                        <div class="summary-value">{{summary.longestSession}}</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Active Streak</div>
+                        <div class="summary-value">{{summary.activeStreak}}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recommendations-card">
+                <h3>Personalized Recommendations</h3>
+                <div class="recommendation-list">
+                    {{#each recommendations}}
+                    <div class="recommendation-item">
+                        <div class="recommendation-icon">{{this.icon}}</div>
+                        <div class="recommendation-content">
+                            <h4>{{this.title}}</h4>
+                            <p>{{this.description}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Pass chart data to JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+		const chartData = {{{chartDataJSON}}};
+	</script>
+	<script src="/js/charts.js"></script>
+	<script src="/js/script.js"></script>
+</body>
+</html>
