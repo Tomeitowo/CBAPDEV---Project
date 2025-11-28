@@ -22,17 +22,23 @@ A web application to help users track and manage their screen time with timers, 
 
 ### Setup
 
-1. **Load sample data by running the line below**
+1. Clone the repository by downloading the contents of the repository or use the command below.
 ```bash
-npm run seed
+git clone https://github.com/Tomeitowo/CBAPDEV---Project.git
+```
+2. Go to the project folder and open Command Prompt.
+
+3. Initialize and install all necessary modules used in the project by running the command below.
+```bash
+npm install
 ```
 
-2. **Start exploring the webapp**
+4. Run the command node index.js to run the server.
 ```bash
-npm start
+node index.js
 ```
 
-3. **Open browser and paste the http link below**
+5. Open browser and paste the http link below.
 ```
 http://localhost:3000
 ```
