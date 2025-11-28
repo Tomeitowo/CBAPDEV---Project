@@ -11,7 +11,9 @@ const hbs = require('hbs');
 const routes = require('./routes/routes.js');
 
 // import module 'database' from './models/db.js'
-const db = require('./models/db.js');
+const db = require('./models/Db.js');
+
+require('dotenv').config();
 
 const app = express();
 const port = 3000;

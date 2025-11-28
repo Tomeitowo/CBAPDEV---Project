@@ -1,9 +1,6 @@
 // import module `mongoose`
 const mongoose = require('mongoose');
 
-// MongoDB connection URL
-const url = 'mongodb://localhost:27017/hypnos';
-
 // Connection options (useNewUrlParser and useUnifiedTopology are no longer needed in Mongoose 6+)
 const options = {};
 
@@ -11,7 +8,7 @@ const database = {
 	// connect to database
     connect: async function() {
         try {
-            await mongoose.connect(url, options);
+            await mongoose.connect(process.env.MONGODB_CONNECT_URI, options);
             console.log('Connected to MongoDB database: hypnos');
         } catch (error) {
             console.log('Database connection error:', error);
